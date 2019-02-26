@@ -170,7 +170,7 @@ public class CharacterController2D : MonoBehaviour
                     m_Rigidbody2D.AddForce(new Vector2(1000f, m_JumpForce));
                 }
             }
-            m_Rigidbody2D.AddForce(new Vector2(0f, 20f));
+            m_Rigidbody2D.AddForce(new Vector2(0f, 50f));
         }
 	}
 
