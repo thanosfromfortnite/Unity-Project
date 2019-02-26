@@ -155,7 +155,7 @@ public class CharacterController2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
-        if (m_sideWinded)
+        if (m_sideWinded && move != 0)
         {
             if (jump)
             {
@@ -170,7 +170,7 @@ public class CharacterController2D : MonoBehaviour
                     m_Rigidbody2D.AddForce(new Vector2(1000f, m_JumpForce));
                 }
             }
-            m_Rigidbody2D.AddForce(new Vector2(0f, 0f));
+            m_Rigidbody2D.AddForce(new Vector2(0f, 20f));
         }
 	}
 
