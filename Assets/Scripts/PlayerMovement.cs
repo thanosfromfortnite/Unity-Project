@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public CharacterController2D controller;
 	public Animator animator;
 
-	public float runSpeed = 40f;
+	public float runSpeed = 80f;
 
 	float horizontalMove = 0f;
 	bool jump = false;
@@ -24,10 +24,11 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetButtonDown("Jump"))
 		{
 			jump = true;
+            walljump = true;
 			animator.SetBool("IsJumping", true);
 		}
 
-		if (Input.GetButtonDown("Crouch") && !jump)
+		if (Input.GetButtonDown("Crouch") && !jump && !walljump)
 		{
 			crouch = true;
 		} else if (Input.GetButtonUp("Crouch"))
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		animator.SetBool("IsJumping", false);
         jump = false;
+        walljump = false;
     }
 
 	public void OnCrouching (bool isCrouching)
@@ -51,7 +53,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Move our character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+		controller.Move(horizontalMove * (Time.fixedDeltaTime / 2), crouch, jump);
 		
 	}
 }

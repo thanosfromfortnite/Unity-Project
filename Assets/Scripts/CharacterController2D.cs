@@ -3,19 +3,24 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
+	[SerializeField] private float m_JumpForce = 250f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
-	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
-	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
+	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
+    [SerializeField] private Transform m_LeftCheck;
+    [SerializeField] private Transform m_RightCheck;
+    [SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-	private Rigidbody2D m_Rigidbody2D;
+    const float k_LeftRadius = .2f;
+    private bool m_sideWinded;
+    const float k_RightRadius = .2f;
+    private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
@@ -44,11 +49,15 @@ public class CharacterController2D : MonoBehaviour
 	private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;
+        bool wasSided = m_sideWinded;
 		m_Grounded = false;
+        m_sideWinded = false;
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        Collider2D[] lColliders = Physics2D.OverlapCircleAll(m_LeftCheck.position, k_LeftRadius, m_WhatIsGround);
+        Collider2D[] rColliders = Physics2D.OverlapCircleAll(m_RightCheck.position, k_RightRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
@@ -58,6 +67,22 @@ public class CharacterController2D : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+        for (int i = 0; i < lColliders.Length; i ++)
+        {
+            if (lColliders[i].gameObject != gameObject)
+            {
+                m_sideWinded = true;
+                if (!wasSided) OnLandEvent.Invoke();
+            }
+        }
+        for (int i = 0; i < rColliders.Length; i ++)
+        {
+            if (rColliders[i].gameObject != gameObject)
+            {
+                m_sideWinded = true;
+                if (!wasSided) OnLandEvent.Invoke();
+            }
+        }
 	}
 
 
@@ -74,7 +99,7 @@ public class CharacterController2D : MonoBehaviour
 		}
 
 		//only control the player if grounded or airControl is turned on
-		if (m_Grounded || m_AirControl)
+		if (m_Grounded || m_AirControl || m_sideWinded)
 		{
 
 			// If crouching
@@ -130,6 +155,18 @@ public class CharacterController2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
+        if (m_sideWinded && jump)
+        {
+            if (m_FacingRight) {
+                m_sideWinded = false;
+                m_Rigidbody2D.AddForce(new Vector2(-1000f, m_JumpForce));
+            }
+            else
+            {
+                m_sideWinded = false;
+                m_Rigidbody2D.AddForce(new Vector2(1000f, m_JumpForce));
+            }
+        }
 	}
 
 
