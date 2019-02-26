@@ -155,17 +155,22 @@ public class CharacterController2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
-        if (m_sideWinded && jump)
+        if (m_sideWinded)
         {
-            if (m_FacingRight) {
-                m_sideWinded = false;
-                m_Rigidbody2D.AddForce(new Vector2(-1000f, m_JumpForce));
-            }
-            else
+            if (jump)
             {
-                m_sideWinded = false;
-                m_Rigidbody2D.AddForce(new Vector2(1000f, m_JumpForce));
+                if (m_FacingRight)
+                {
+                    m_sideWinded = false;
+                    m_Rigidbody2D.AddForce(new Vector2(-1000f, m_JumpForce));
+                }
+                else
+                {
+                    m_sideWinded = false;
+                    m_Rigidbody2D.AddForce(new Vector2(1000f, m_JumpForce));
+                }
             }
+            m_Rigidbody2D.AddForce(new Vector2(0f, 0f));
         }
 	}
 
