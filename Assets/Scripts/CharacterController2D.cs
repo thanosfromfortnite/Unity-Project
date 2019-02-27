@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class CharacterController2D : MonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 250f;							// Amount of force added when the player jumps.
+    [SerializeField] private float m_WallJumpForce = 1000f;
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
@@ -66,6 +67,10 @@ public class CharacterController2D : MonoBehaviour
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
+            else
+            {
+                m_Grounded = false;
+            }
 		}
         for (int i = 0; i < lColliders.Length; i ++)
         {
@@ -155,19 +160,19 @@ public class CharacterController2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
-        if (m_sideWinded && move != 0)
+        if (m_sideWinded && move != 0 && !m_Grounded)
         {
             if (jump)
             {
                 if (m_FacingRight)
                 {
                     m_sideWinded = false;
-                    m_Rigidbody2D.AddForce(new Vector2(-1000f, m_JumpForce));
+                    m_Rigidbody2D.AddForce(new Vector2(-m_WallJumpForce, m_JumpForce));
                 }
                 else
                 {
                     m_sideWinded = false;
-                    m_Rigidbody2D.AddForce(new Vector2(1000f, m_JumpForce));
+                    m_Rigidbody2D.AddForce(new Vector2(m_WallJumpForce, m_JumpForce));
                 }
             }
             m_Rigidbody2D.AddForce(new Vector2(0f, 50f));
