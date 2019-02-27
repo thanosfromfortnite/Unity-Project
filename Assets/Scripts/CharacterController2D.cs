@@ -14,12 +14,15 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
+    [SerializeField] private float m_BunnyhopAccelerationRate = 2000000f;
+    [SerializeField] private float m_BunnyhopDeaccelerationRate = 0.999999f;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     const float k_LeftRadius = .2f;
     private bool m_sideWinded;
+    private float m_bunnyHopMultiplier = 1f;
     const float k_RightRadius = .2f;
     private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -67,10 +70,6 @@ public class CharacterController2D : MonoBehaviour
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
-            else
-            {
-                m_Grounded = false;
-            }
 		}
         for (int i = 0; i < lColliders.Length; i ++)
         {
@@ -88,7 +87,29 @@ public class CharacterController2D : MonoBehaviour
                 if (!wasSided) OnLandEvent.Invoke();
             }
         }
-	}
+        if (m_Grounded)
+        {
+           Deaccelerate();
+        }
+        if (!wasGrounded && m_Grounded)
+        {
+            Accelerate();
+        }
+    }
+
+    private void Accelerate()
+    {
+        m_bunnyHopMultiplier *= m_BunnyhopAccelerationRate;
+    }
+
+    private void Deaccelerate()
+    {
+        m_bunnyHopMultiplier *= m_BunnyhopDeaccelerationRate;
+        if (m_bunnyHopMultiplier < 1f)
+        {
+            m_bunnyHopMultiplier = 1f;
+        }
+    }
 
 
 	public void Move(float move, bool crouch, bool jump)
@@ -136,7 +157,7 @@ public class CharacterController2D : MonoBehaviour
 			}
 
 			// Move the character by finding the target velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			Vector3 targetVelocity = new Vector2(move * 10f * m_bunnyHopMultiplier, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
