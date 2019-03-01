@@ -87,14 +87,14 @@ public class CharacterController2D : MonoBehaviour
                 if (!wasSided) OnLandEvent.Invoke();
             }
         }
-        if (m_Grounded)
+        /*if (m_Grounded)
         {
            Deaccelerate();
         }
         if (!wasGrounded && m_Grounded)
         {
             Accelerate();
-        }
+        }*/
     }
 
     private void Accelerate()
