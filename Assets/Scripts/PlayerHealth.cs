@@ -23,8 +23,6 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       
         Health -= damage;
         damage = 0;
         // If an outside source sets or adds damage, take that damage immediately and wait for another update to it
@@ -37,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
 
 
     }
-    private void Ouch(int dmg)
+    public void Ouch(int dmg)
     {
         // Flinch effect
         damage += dmg;
