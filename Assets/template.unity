@@ -901,9 +901,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa2b193a7f108c4d8e1af8c3336fd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 0
   StartWithMaxHealth: 1
-  Health: 100
+  Health: 0
+  animator: {fileID: 820667358}
 --- !u!1 &981602203
 GameObject:
   m_ObjectHideFlags: 0
@@ -5253,7 +5254,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!4 &1873847115
 Transform:

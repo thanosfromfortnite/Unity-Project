@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private float MaxHealth;
+    [SerializeField] private int MaxHealth;
     [SerializeField] private bool StartWithMaxHealth;
-    [SerializeField] public float Health;
+    [SerializeField] private int Health;
+    private int damage = 0;
+    public Animator animator;
+    private int x = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,21 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Health -= damage;
+        damage = 0;
+        // If an outside source sets or adds damage, take that damage immediately and wait for another update to it
         
+    }
+    public void Ouch(int dmg)
+    {
+        // Flinch effect
+        damage += dmg;
+        GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0.8f);
+        if (x > 5)
+        {
+            x = 0;
+            GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0);
+            Debug.Log("yeah");
+        }
     }
 }
