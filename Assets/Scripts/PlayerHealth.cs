@@ -37,16 +37,22 @@ public class PlayerHealth : MonoBehaviour
 
 
     }
-    public IEnumerator Ouch(int dmg)
+    private void Ouch(int dmg)
     {
         // Flinch effect
         damage += dmg;
         Debug.Log("yeah");
-        GetComponent<SpriteRenderer>().color = Color.red;
+        StartCoroutine(waiter());
 
-        yield return new WaitForSeconds(1f);
-        GetComponent<SpriteRenderer>().color = Color.white;
         Debug.Log("yeah");
         x = false;
+    }
+
+    IEnumerator waiter()
+    {
+        GetComponent<SpriteRenderer>().color = Color.red;
+        //Wait for 1
+        yield return new WaitForSecondsRealtime(1);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
