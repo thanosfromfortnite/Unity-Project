@@ -5,6 +5,8 @@ using UnityEngine;
 public class FrogJump : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    
     void Start()
     {
         
@@ -16,8 +18,16 @@ public class FrogJump : MonoBehaviour
         
     }
 
-    public void JumpYouIdiot()
+    public void JumpYouIdiot(bool right)
     {
+        if (right)
+        {
 
+        }
+    }
+
+    private void Move()
+    {
+  
     }
 }
