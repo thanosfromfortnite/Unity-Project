@@ -26,23 +26,27 @@ public class PlayerHealth : MonoBehaviour
         Health -= damage;
         damage = 0;
         // If an outside source sets or adds damage, take that damage immediately and wait for another update to it
-        if (Input.GetButtonDown("Jump") && !x)
+      
+    }
+
+    public void TakeDamage()
+    {
+        if (!x)
         {
             x = true;
-            Debug.Log("no");
+            //Debug.Log("no");
             Ouch(5);
         }
-
-
     }
+
     public void Ouch(int dmg)
     {
         // Flinch effect
         damage += dmg;
-        Debug.Log("yeah");
+        //Debug.Log("yeah");
         StartCoroutine(waiter());
 
-        Debug.Log("yeah");
+        //Debug.Log("yeah");
         x = false;
     }
 
