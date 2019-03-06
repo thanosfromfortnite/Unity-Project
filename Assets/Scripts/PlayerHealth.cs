@@ -48,9 +48,14 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator waiter()
     {
-        GetComponent<SpriteRenderer>().color = Color.red;
-        //Wait for 1
-        yield return new WaitForSecondsRealtime(1);
+        for (int i = 0; i < 5; i++)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
+            //Wait for 1
+            yield return new WaitForSecondsRealtime(0.05f);
+            GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSecondsRealtime(0.05f);
+        }
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
