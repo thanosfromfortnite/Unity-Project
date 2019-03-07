@@ -5260,7 +5260,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &1873847115
 Transform:
   m_ObjectHideFlags: 0
@@ -5348,7 +5348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4613f63d3f059429f31b405fe75e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectionRadius: 5
+  DetectionRadius: 10
+  CooldownTimer: 5
   frogJump: {fileID: 1873847121}
 --- !u!114 &1873847121
 MonoBehaviour:
@@ -5362,6 +5363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b33231190dd204aa7247d5d8d5d335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpForce: 7
+  HorizontalJumpForce: 6
 --- !u!1 &2007913319
 GameObject:
   m_ObjectHideFlags: 0

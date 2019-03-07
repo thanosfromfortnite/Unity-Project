@@ -23,15 +23,15 @@ public class PlayerDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void Detect()
     {
-        if (Mathf.Abs(relativePosition) <= DetectionRadius)
+        Debug.Log(playerPosition.position.x + " " + playerPosition.position.y + " " + ownPosition.position.x + " " + ownPosition.position.y);
+        if (Mathf.Abs(Mathf.Abs(playerPosition.position.x + playerPosition.position.y) - Mathf.Abs(ownPosition.position.x + ownPosition.position.y)) <= DetectionRadius)
         {
-            frogJump.JumpYouIdiot(relativePosition >= 0);
-            Debug.Log("gdfsdf");
+            frogJump.JumpYouIdiot(playerPosition.position.x - ownPosition.position.x >= 0);
         }
     }
 }
