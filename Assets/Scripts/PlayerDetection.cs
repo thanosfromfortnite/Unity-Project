@@ -5,18 +5,22 @@ using UnityEngine;
 public class PlayerDetection : MonoBehaviour
 {
     [SerializeField] private float DetectionRadius = 5f;
-    [SerializeField] private int CooldownTimer = 2;
+    [SerializeField] private float CooldownTimer = 1f;
+    [SerializeField] private Transform m_GroundCheck;
+    [SerializeField] private LayerMask m_WhatIsGround;
+    const float k_GroundedRadius = .5f;
     private Transform ownPosition;
     private Transform playerPosition;
     public FrogJump frogJump;
     private float relativePosition;
+    [SerializeField] private bool DontMoveIfNotGrounded = false;
 
     // Start is called before the first frame update
     void Start()
     {
         playerPosition = GameObject.Find("Player").transform;
         ownPosition = gameObject.transform;
-        InvokeRepeating("Detect", 1.0f, 1.0f);
+        InvokeRepeating("Detect", 0f, CooldownTimer);
         relativePosition = (playerPosition.position.x + playerPosition.position.y) - (ownPosition.position.x + ownPosition.position.y);
     }
 
@@ -28,8 +32,19 @@ public class PlayerDetection : MonoBehaviour
 
     private void Detect()
     {
-        Debug.Log(playerPosition.position.x + " " + playerPosition.position.y + " " + ownPosition.position.x + " " + ownPosition.position.y);
-        if (Mathf.Abs(Mathf.Abs(playerPosition.position.x + playerPosition.position.y) - Mathf.Abs(ownPosition.position.x + ownPosition.position.y)) <= DetectionRadius)
+        bool m_Grounded = false;
+        if (DontMoveIfNotGrounded)
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                if (colliders[i].gameObject != gameObject)
+                {
+                    m_Grounded = true;
+                }
+            }
+        }
+        if ((m_Grounded && DontMoveIfNotGrounded || !DontMoveIfNotGrounded) && Mathf.Abs(Mathf.Abs(playerPosition.position.x + playerPosition.position.y) - Mathf.Abs(ownPosition.position.x + ownPosition.position.y)) <= DetectionRadius)
         {
             frogJump.JumpYouIdiot(playerPosition.position.x - ownPosition.position.x >= 0);
         }
