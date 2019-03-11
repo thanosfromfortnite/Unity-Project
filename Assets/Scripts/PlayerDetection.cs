@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDetection : MonoBehaviour
 {
     [SerializeField] private float DetectionRadius = 5f;
-    [SerializeField] private float CooldownTimer = 1f;
+    [SerializeField] private float CooldownTimer = 3f;
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
     const float k_GroundedRadius = .5f;

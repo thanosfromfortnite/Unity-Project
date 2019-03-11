@@ -192,6 +192,7 @@
 Assets/Scripts/CameraFollow.cs
 Assets/Scripts/CharacterController2D.cs
 Assets/Scripts/FrogJump.cs
+Assets/Scripts/LayeringCollision.cs
 Assets/Scripts/PlayerDetection.cs
 Assets/Scripts/PlayerHealth.cs
 Assets/Scripts/PlayerMovement.cs

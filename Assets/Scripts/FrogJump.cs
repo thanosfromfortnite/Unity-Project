@@ -25,12 +25,10 @@ public class FrogJump : MonoBehaviour
         if (right)
         {
             Move(HorizontalJumpForce, JumpForce);
-            Debug.Log(right);
         }
         else
         {
             Move(-HorizontalJumpForce, JumpForce);
-            Debug.Log(right);
         }
     }
 
@@ -38,6 +36,5 @@ public class FrogJump : MonoBehaviour
     {
         m_Rigidbody2D.velocity = new Vector3(xForce, yForce);
         m_Rigidbody2D.AddForce(new Vector2(xForce, yForce));
-        Debug.Log(xForce + " " + yForce);
     }
 }
