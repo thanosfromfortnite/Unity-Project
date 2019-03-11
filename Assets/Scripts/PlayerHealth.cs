@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         {
             x = true;
             //Debug.Log("no");
-            Ouch(5);
+            Ouch(1);
         }
     }
 
@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
         //Debug.Log("yeah");
         StartCoroutine(waiter());
 
-        //Debug.Log("yeah");
+        Debug.Log(Health);
         x = false;
     }
 
