@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int MaxHealth;
+    [SerializeField] public int MaxHealth;
     [SerializeField] private bool StartWithMaxHealth;
-    [SerializeField] private int Health;
-    private int damage = 0;
+    [SerializeField] public int Health;
+    [SerializeField] private float CooldownTime;
+    private float nextTime;
     public Animator animator;
-    private bool x = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        nextTime = Time.time;
         if (StartWithMaxHealth)
         {
             Health = MaxHealth;
@@ -23,18 +24,15 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Health -= damage;
-        damage = 0;
-        // If an outside source sets or adds damage, take that damage immediately and wait for another update to it
-      
+
     }
 
     public void TakeDamage()
     {
-        if (!x)
+        if (Time.time > nextTime)
         {
-            x = true;
             //Debug.Log("no");
+            nextTime = Time.time + CooldownTime;
             Ouch(1);
         }
     }
@@ -42,17 +40,16 @@ public class PlayerHealth : MonoBehaviour
     public void Ouch(int dmg)
     {
         // Flinch effect
-        damage += dmg;
+        Health -= dmg;
         //Debug.Log("yeah");
-        StartCoroutine(waiter());
-
+        StartCoroutine(Waiter());
         Debug.Log(Health);
-        x = false;
+        
     }
 
-    IEnumerator waiter()
+    IEnumerator Waiter()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 7; i++)
         {
             GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.3f);
             //Wait for 1
@@ -61,5 +58,9 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.05f);
         }
         GetComponent<SpriteRenderer>().color = Color.white;
+    }
+    IEnumerator Cooldown(float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
     }
 }
