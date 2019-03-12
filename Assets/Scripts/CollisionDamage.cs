@@ -6,7 +6,7 @@ public class CollisionDamage : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Collider2D objectCollider;
+    public CircleCollider2D objectCollider;
     public Collider2D anotherCollider;
 
     
@@ -19,15 +19,16 @@ public class CollisionDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Touch();
+	
     }
 
-
-    private void Touch()
-    {
-        if (objectCollider.IsTouching(anotherCollider))
-        {
-            Debug.Log("hey");
-        }
+    
+    void OnCollisionEnter2D(Collision2D other) {
+	Debug.Log("h");
+	if (other.gameObject.tag == "Player") {
+	    Debug.Log("works");
+	    other.gameObject.GetComponent<PlayerHealth>().TakeDamage();
+	}
+	
     }
 }
