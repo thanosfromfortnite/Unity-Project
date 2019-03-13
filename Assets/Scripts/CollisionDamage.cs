@@ -24,9 +24,7 @@ public class CollisionDamage : MonoBehaviour
 
     
     void OnCollisionEnter2D(Collision2D other) {
-	Debug.Log("h");
 	if (other.gameObject.tag == "Player") {
-	    Debug.Log("works");
 	    other.gameObject.GetComponent<PlayerHealth>().TakeDamage();
 	}
 	
