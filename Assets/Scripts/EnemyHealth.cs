@@ -33,7 +33,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (Time.time > nextTime)
         {
-            Debug.Log("no");
+            //Debug.Log("no");
             nextTime = Time.time + CooldownTime;
             Ouch(damage);
         }

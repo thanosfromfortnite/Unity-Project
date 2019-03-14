@@ -1046,8 +1046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128067981f47ed14ba929f11f0fab129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackCooldown: 0.2
-  AttackSpeed: 0.5
+  AttackCooldown: 0
+  AttackSpeed: 0.1
   Damage: 25
   HittableLayer:
     serializedVersion: 2
@@ -5637,7 +5637,7 @@ MonoBehaviour:
   MaxHealth: 100
   StartWithMaxHealth: 1
   Health: 100
-  CooldownTime: 0.1
+  CooldownTime: 0
   animator: {fileID: 0}
 --- !u!114 &1873847120
 MonoBehaviour:
