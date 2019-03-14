@@ -8,6 +8,7 @@ public class CollisionDamage : MonoBehaviour
 
     public CircleCollider2D objectCollider;
     public Collider2D anotherCollider;
+    [SerializeField] public LayerMask PlayerLayer;
 
     
     void Start()
@@ -19,14 +20,20 @@ public class CollisionDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(objectCollider.transform.position, objectCollider.radius, PlayerLayer);
+        for (int i = 0; i < colliders.Length; i ++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                anotherCollider.gameObject.GetComponent<PlayerHealth>().TakeDamage();
+            }
+        }
     }
 
     
-    void OnCollisionEnter2D(Collision2D other) {
-	if (other.gameObject.tag == "Player") {
-	    other.gameObject.GetComponent<PlayerHealth>().TakeDamage();
-	}
-	
-    }
+    /*void OnCollisionEnter2D(Collision2D other) {
+	    if (other.gameObject.tag == "Player") {
+	        other.gameObject.GetComponent<PlayerHealth>().TakeDamage();
+	    }
+    }*/
 }
