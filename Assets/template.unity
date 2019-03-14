@@ -5613,6 +5613,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2d9c2da9cb9334bb5eecdfbc3173f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
+  StartWithMaxHealth: 1
+  Health: 100
+  CooldownTime: 0
+  animator: {fileID: 0}
 --- !u!114 &1873847120
 MonoBehaviour:
   m_ObjectHideFlags: 0

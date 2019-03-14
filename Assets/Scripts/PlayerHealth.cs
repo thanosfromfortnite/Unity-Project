@@ -37,9 +37,8 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void Ouch(int dmg)
+    void Ouch(int dmg)
     {
-        // Flinch effect
         Health -= dmg;
         //Debug.Log("yeah");
         StartCoroutine(Waiter());
