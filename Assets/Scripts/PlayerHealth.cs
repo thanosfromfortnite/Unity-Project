@@ -27,13 +27,21 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void TakeDamage()
+    public void TakeDamage(bool direction, float knockbackForceX = 700f, float knockbackforceY = 300f)
     {
         if (Time.time > nextTime)
         {
             //Debug.Log("no");
             nextTime = Time.time + CooldownTime;
             Ouch(1);
+            if (direction)
+            {
+                Knockback(knockbackForceX, knockbackforceY);
+            }
+            else
+            {
+                Knockback(-knockbackForceX, knockbackforceY);
+            }
         }
     }
 
@@ -44,6 +52,11 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(Waiter());
         Debug.Log(Health);
         
+    }
+    
+    void Knockback(float x, float y)
+    {
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(x, y));
     }
 
     IEnumerator Waiter()

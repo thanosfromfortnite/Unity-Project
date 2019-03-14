@@ -770,6 +770,7 @@ GameObject:
   - component: {fileID: 820667358}
   - component: {fileID: 820667359}
   - component: {fileID: 820667360}
+  - component: {fileID: 820667361}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -813,7 +814,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1033,6 +1034,26 @@ CapsuleCollider2D:
   m_Offset: {x: -0.006657481, y: -0.36867738}
   m_Size: {x: 0.8711469, y: 1.2345276}
   m_Direction: 0
+--- !u!114 &820667361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820667350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128067981f47ed14ba929f11f0fab129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackCooldown: 0.2
+  AttackSpeed: 0.5
+  Damage: 25
+  HittableLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  attackHitbox: {fileID: 1338992556}
+  HitSprite: {fileID: 1338992555}
 --- !u!1 &981602203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1369,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 4524b64354bf2e3428588bc0a9334b45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1370,11 +1391,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09386861, y: -0.009077966}
-  m_Size: {x: 0.615587, y: 0.6834787}
+  m_Offset: {x: -0.08384526, y: -0.009077966}
+  m_Size: {x: 0.6356337, y: 0.6834787}
   m_Direction: 0
 --- !u!1 &1339704512
 GameObject:
@@ -5616,7 +5637,7 @@ MonoBehaviour:
   MaxHealth: 100
   StartWithMaxHealth: 1
   Health: 100
-  CooldownTime: 0
+  CooldownTime: 0.1
   animator: {fileID: 0}
 --- !u!114 &1873847120
 MonoBehaviour:
@@ -5664,11 +5685,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c6c0f7f225e0b4bac2278eab8aaa79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectCollider: {fileID: 0}
-  anotherCollider: {fileID: 0}
+  objectCollider: {fileID: 1873847116}
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1024
+  knockbackX: 600
+  knockbackY: 700
 --- !u!1 &2007913319
 GameObject:
   m_ObjectHideFlags: 0
