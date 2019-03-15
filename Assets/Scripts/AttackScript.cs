@@ -40,7 +40,7 @@ public class AttackScript : MonoBehaviour
         {
             if (colliders[i].gameObject.tag == "Entity")
             {
-                colliders[i].gameObject.GetComponent<EnemyHealth>().TakeDamage(Damage);
+                colliders[i].gameObject.GetComponent<EnemyHealth>().TakeDamage((gameObject.transform.position.x - colliders[i].gameObject.transform.position.x) > 0, Damage);
                 break;
             }
         }

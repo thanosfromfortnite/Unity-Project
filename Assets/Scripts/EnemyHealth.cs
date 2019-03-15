@@ -29,13 +29,21 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(bool direction, int damage, float knockbackForceX = 300f, float knockbackforceY = 300f)
     {
         if (Time.time > nextTime)
         {
             //Debug.Log("no");
             nextTime = Time.time + CooldownTime;
             Ouch(damage);
+            if (direction)
+            {
+                Knockback(-knockbackForceX, knockbackforceY);
+            }
+            else
+            {
+                Knockback(knockbackForceX, knockbackforceY);
+            }
         }
     }
 
@@ -48,10 +56,15 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
+    void Knockback(float x, float y)
+    {
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(x, y));
+    }
+
     IEnumerator Waiter()
     {
-        GetComponent<SpriteRenderer>().color = new Color(2f, 2f, 2f);
-        yield return new WaitForSecondsRealtime(0.5f);
+        GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        yield return new WaitForSecondsRealtime(0.05f);
         GetComponent<SpriteRenderer>().color = Color.white;
     }
     IEnumerator Cooldown(float time)

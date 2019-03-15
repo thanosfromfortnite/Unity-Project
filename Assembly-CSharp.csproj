@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\PlayerDetection.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\VisualizeEnemyHealth.cs" />
     <Compile Include="Assets\Scripts\VisualizeHealth.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

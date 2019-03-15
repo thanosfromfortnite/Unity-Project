@@ -24,7 +24,7 @@ public class CollisionDamage : MonoBehaviour
         {
             if (colliders[i].gameObject.tag == "Player")
             {
-                colliders[i].gameObject.GetComponent<PlayerHealth>().TakeDamage(colliders[i].gameObject.transform.position.x - gameObject.transform.position.x > 0);
+                colliders[i].gameObject.GetComponent<PlayerHealth>().TakeDamage((gameObject.transform.position.x - colliders[i].gameObject.transform.position.x) > 0);
                 break;
             }
         }

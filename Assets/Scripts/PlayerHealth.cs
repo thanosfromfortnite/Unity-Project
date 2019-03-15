@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    public void TakeDamage(bool direction, float knockbackForceX = 700f, float knockbackforceY = 300f)
+    public void TakeDamage(bool direction, float knockbackForceX = 600f, float knockbackforceY = 400f)
     {
         if (Time.time > nextTime)
         {
