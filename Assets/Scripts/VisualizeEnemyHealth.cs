@@ -13,7 +13,7 @@ public class VisualizeEnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spriteTransform = transform.Find("HealthBar").transform.Find("HealthHealthBar").transform;
+        spriteTransform = transform.Find("EnHealthBar").transform.Find("EnHealthHealthBar").transform;
         maxHealth = transform.gameObject.GetComponent<EnemyHealth>().MaxHealth;
         currentHealth = transform.gameObject.GetComponent<EnemyHealth>().Health;
         scaleBefore = spriteTransform.localScale.x;
