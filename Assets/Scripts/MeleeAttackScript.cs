@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MeleeAttackScript : AttackScript
 {
-    bool attacking = false;
     [SerializeField] public float AttackCooldown;
     [SerializeField] public float AttackSpeed;
     [SerializeField] public int Damage = 25;

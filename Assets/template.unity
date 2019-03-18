@@ -1008,6 +1008,8 @@ GameObject:
   - component: {fileID: 820667359}
   - component: {fileID: 820667360}
   - component: {fileID: 820667361}
+  - component: {fileID: 820667362}
+  - component: {fileID: 820667363}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1278,7 +1280,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820667350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 128067981f47ed14ba929f11f0fab129, type: 3}
   m_Name: 
@@ -1291,6 +1293,35 @@ MonoBehaviour:
     m_Bits: 256
   attackHitbox: {fileID: 1338992556}
   HitSprite: {fileID: 1338992555}
+--- !u!114 &820667362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820667350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64916f3aad238154eaf28465e7a8b767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &820667363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820667350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63151ffc36ea2794b85027dd67bcfc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackCooldown: 0
+  AttackSpeed: 0.1
+  Damage: 10
+  horizontalVelocity: 0.5
+  verticalVelocity: 0.5
 --- !u!1 &981602203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1701,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 4524b64354bf2e3428588bc0a9334b45, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
