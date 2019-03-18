@@ -65,11 +65,15 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\CollisionDamage.cs" />
+    <Compile Include="Assets\Scripts\DoAnAttackScript.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\FrogJump.cs" />
+    <Compile Include="Assets\Scripts\MeleeAttackScript.cs" />
     <Compile Include="Assets\Scripts\PlayerDetection.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Scripts\ShootScript.cs" />
     <Compile Include="Assets\Scripts\VisualizeEnemyHealth.cs" />
     <Compile Include="Assets\Scripts\VisualizeHealth.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
