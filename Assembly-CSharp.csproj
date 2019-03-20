@@ -67,9 +67,11 @@
     <Compile Include="Assets\Scripts\CollisionDamage.cs" />
     <Compile Include="Assets\Scripts\DoAnAttackScript.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\FrogJump.cs" />
     <Compile Include="Assets\Scripts\MeleeAttackScript.cs" />
     <Compile Include="Assets\Scripts\PlayerDetection.cs" />
+    <Compile Include="Assets\Scripts\PlayerDetectionForThingsThatArentFrogs.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
