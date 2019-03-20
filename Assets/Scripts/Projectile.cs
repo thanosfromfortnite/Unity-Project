@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     public LayerMask layerMaskThatThisHits;
     public LayerMask ground;
     private Rigidbody2D rigidBody;
-    public float xForce = 5f;
+    public float xForce = 10f;
     public float yForce = 0f;
     public int Damage = 10;
     
@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviour
         Collider2D[] obstacleColliders = Physics2D.OverlapCircleAll(transform.position, collider.radius, ground);
         for (int i = 0; i < obstacleColliders.Length; i ++)
         {
-            if (obstacleColliders[i].IsTouchingLayers(ground))
+            if (obstacleColliders[i])
             {
                 Destroy(gameObject);
             }
