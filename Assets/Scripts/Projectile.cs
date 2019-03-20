@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     public LayerMask layerMaskThatThisHits;
     public LayerMask ground;
     private Rigidbody2D rigidBody;
-    public float xForce = 0.5f;
+    public float xForce = 5f;
     public float yForce = 0f;
     public int Damage = 10;
     
@@ -26,7 +26,8 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidBody.AddForce(new Vector2(xForce, yForce));
+        // rigidBody.AddForce(new Vector2(xForce, yForce));
+        rigidBody.velocity = new Vector2(xForce, yForce);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, collider.radius, layerMaskThatThisHits);
         for (int i = 0; i < colliders.Length; i ++)
         {
@@ -39,7 +40,7 @@ public class Projectile : MonoBehaviour
         Collider2D[] obstacleColliders = Physics2D.OverlapCircleAll(transform.position, collider.radius, ground);
         for (int i = 0; i < obstacleColliders.Length; i ++)
         {
-            if (obstacleColliders[i])
+            if (obstacleColliders[i].IsTouchingLayers(ground))
             {
                 Destroy(gameObject);
             }

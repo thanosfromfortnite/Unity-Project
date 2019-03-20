@@ -8,8 +8,6 @@ public class ShootScript : AttackScript
     [SerializeField] public float AttackCooldown;
     [SerializeField] public float AttackSpeed;
     [SerializeField] public int Damage = 25;
-    [SerializeField] public float horizontalVelocity = 0.5f;
-    [SerializeField] public float verticalVelocity = 0.5f;
     [SerializeField] public Sprite sprite;
     private GameObject projectile;
     // Start is called before the first frame update
@@ -33,7 +31,9 @@ public class ShootScript : AttackScript
 
             projectile = new GameObject("Projectile");
 
-            projectile.transform.SetParent(gameObject.transform);
+            // projectile.transform.SetParent(gameObject.transform);
+
+            projectile.layer = 11;
 
             projectile.AddComponent<SpriteRenderer>();
             SpriteRenderer spriteRenderer = projectile.GetComponent<SpriteRenderer>();
@@ -44,14 +44,16 @@ public class ShootScript : AttackScript
             collider.radius = 0.12f;
             collider.isTrigger = true;
 
+
             Rigidbody2D rigidBody = projectile.AddComponent<Rigidbody2D>();
 
             Projectile projectileScript = projectile.AddComponent<Projectile>();
 
             projectile.transform.position = gameObject.transform.position;
-
-            projectileScript.xForce = horizontalVelocity;
-            projectileScript.yForce = verticalVelocity;
+            if (!gameObject.GetComponent<CharacterController2D>().m_FacingRight)
+            {
+                projectileScript.xForce = -projectileScript.xForce;
+            }
         }
     }
 
