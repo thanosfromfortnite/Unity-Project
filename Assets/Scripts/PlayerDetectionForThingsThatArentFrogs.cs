@@ -62,6 +62,7 @@ public class PlayerDetectionForThingsThatArentFrogs : MonoBehaviour
                     obstacle = true;
                 }
             }
+            
             if (obstacle && m_Grounded)
             {
                 enemyMovement.JumpYouIdiot(playerPosition.position.x - ownPosition.position.x >= 0);

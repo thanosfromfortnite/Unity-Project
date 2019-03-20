@@ -6,7 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     private Rigidbody2D m_Rigidbody2D;
     [SerializeField] private float JumpForce = 7f;
-    [SerializeField] private float HorizontalJumpForce = 0.5f;
+    [SerializeField] private float HorizontalJumpForce = 2f;
     // Start is called before the first frame update
     void Start()
     {
