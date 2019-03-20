@@ -2817,7 +2817,7 @@ GameObject:
   - component: {fileID: 1701607309}
   - component: {fileID: 1701607308}
   m_Layer: 8
-  m_Name: Enemy (1)
+  m_Name: Walking Frog
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2883,7 +2883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpForce: 7
-  HorizontalJumpForce: 5
+  HorizontalJumpForce: 0.5
 --- !u!114 &1701607309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,12 +2896,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43e95036d6a3424091e48d30635863b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectionRadius: 5
+  DetectionRadius: 15
   CooldownTimer: 0
   m_GroundCheck: {fileID: 1701607315}
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 1559
+    m_Bits: 535
   WallCheckLeft: {fileID: 1097738215}
   WallCheckRight: {fileID: 1409128195}
   enemyMovement: {fileID: 1701607308}
@@ -3044,7 +3044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701607304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.89, y: 2.89, z: 0}
+  m_LocalPosition: {x: 39.24, y: 2.66, z: 0}
   m_LocalScale: {x: 5.4110003, y: 5.4110003, z: 0.773}
   m_Children:
   - {fileID: 1569303175}
@@ -3068,7 +3068,7 @@ GameObject:
   - component: {fileID: 1813485691}
   - component: {fileID: 1813485690}
   - component: {fileID: 1813485689}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6257,6 +6257,33 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: 34, y: 2, z: 0}
+    second:
+      m_TileIndex: 32
+      m_TileSpriteIndex: 32
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 35, y: 2, z: 0}
+    second:
+      m_TileIndex: 33
+      m_TileSpriteIndex: 33
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 36, y: 2, z: 0}
+    second:
+      m_TileIndex: 34
+      m_TileSpriteIndex: 34
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -27, y: 3, z: 0}
     second:
       m_TileIndex: 22
@@ -6710,6 +6737,12 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 7d55b5ccd9b9d7d40b503fcff301d102, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: db463e7de71d56a45948dd2e2e88a5fb, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 3c3678c86a58ea14a9d7eccb977017a1, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: aca5b40753d9d2b4781a4e0f3a7078b2, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 681ef75bbf5dec543b7dff4eb64c5b87, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 20
     m_Data: {fileID: 21300002, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
@@ -6775,8 +6808,14 @@ Tilemap:
     m_Data: {fileID: 21300108, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300070, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300100, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300102, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300104, guid: 261212b977f594d5dbc48631a5c1295c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 389
+  - m_RefCount: 392
     m_Data:
       e00: 1
       e01: 0
@@ -6795,7 +6834,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 389
+  - m_RefCount: 392
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6887,6 +6926,14 @@ CompositeCollider2D:
       - X: 405949984
         Y: 9950000
       - X: 405949984
+        Y: 19850000
+      - X: 366349984
+        Y: 19850000
+      - X: 366349984
+        Y: 29750000
+      - X: 336549984
+        Y: 29750000
+      - X: 336549984
         Y: 19850000
       - X: 304507159
         Y: 19850000
@@ -7156,6 +7203,10 @@ CompositeCollider2D:
       - {x: 39.594997, y: 0.995}
       - {x: 40.594997, y: 0.995}
       - {x: 40.594997, y: 1.985}
+      - {x: 36.635, y: 1.985}
+      - {x: 36.635, y: 2.9750001}
+      - {x: 33.655, y: 2.9750001}
+      - {x: 33.655, y: 1.985}
       - {x: 30.450718, y: 1.985}
       - {x: 30.695002, y: 2.4125001}
       - {x: 30.695002, y: 7.925}

@@ -6,7 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     private Rigidbody2D m_Rigidbody2D;
     [SerializeField] private float JumpForce = 7f;
-    [SerializeField] private float HorizontalJumpForce = 0.3f;
+    [SerializeField] private float HorizontalJumpForce = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,26 +22,33 @@ public class EnemyMove : MonoBehaviour
     public void MoveYouIdiot(bool right)
     {
         if (right)
-            Move(HorizontalJumpForce, 0f);
+            Move(HorizontalJumpForce, 0f, false);
         else
-            Move(-HorizontalJumpForce, 0f);
+            Move(-HorizontalJumpForce, 0f, false);
     }
 
     public void JumpYouIdiot(bool right)
     {
         if (right)
         {
-            Move(HorizontalJumpForce, JumpForce);
+            Move(HorizontalJumpForce, JumpForce, true);
         }
         else
         {
-            Move(-HorizontalJumpForce, JumpForce);
+            Move(-HorizontalJumpForce, JumpForce, true);
         }
     }
 
-    private void Move(float xForce, float yForce)
+    private void Move(float xForce, float yForce, bool jump)
     {
-        m_Rigidbody2D.velocity = new Vector3(xForce, yForce);
+        if (jump)
+        {
+            m_Rigidbody2D.velocity = new Vector3(xForce, yForce);
+        }
+        else
+        {
+            m_Rigidbody2D.velocity = new Vector3(xForce, m_Rigidbody2D.velocity.y);
+        }
         m_Rigidbody2D.AddForce(new Vector2(xForce, yForce));
     }
 }

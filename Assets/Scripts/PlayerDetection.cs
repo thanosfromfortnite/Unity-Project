@@ -8,7 +8,7 @@ public class PlayerDetection : MonoBehaviour
     [SerializeField] private float CooldownTimer = 3f;
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private LayerMask m_WhatIsGround;
-    const float k_GroundedRadius = .5f;
+    const float k_GroundedRadius = .7f;
     private Transform ownPosition;
     private Transform playerPosition;
     public FrogJump frogJump;
