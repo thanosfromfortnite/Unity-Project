@@ -10,8 +10,10 @@ public class ShootScript : AttackScript
     [SerializeField] public int Damage = 25;
     [SerializeField] public float horizontalVelocity = 0.5f;
     [SerializeField] public float verticalVelocity = 0.5f;
+    [SerializeField] public Sprite sprite;
+    private GameObject projectile;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         nextTime = Time.time;
         
@@ -27,9 +29,29 @@ public class ShootScript : AttackScript
         if (Time.time > nextTime)
         {
             nextTime = Time.time + AttackCooldown;
-            Projectile x = gameObject.AddComponent<Projectile>();
-            x.xForce = horizontalVelocity;
-            x.yForce = verticalVelocity;
+
+
+            projectile = new GameObject("Projectile");
+
+            projectile.transform.SetParent(gameObject.transform);
+
+            projectile.AddComponent<SpriteRenderer>();
+            SpriteRenderer spriteRenderer = projectile.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = sprite;
+            spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
+            CircleCollider2D collider = projectile.AddComponent<CircleCollider2D>();
+            collider.radius = 0.12f;
+            collider.isTrigger = true;
+
+            Rigidbody2D rigidBody = projectile.AddComponent<Rigidbody2D>();
+
+            Projectile projectileScript = projectile.AddComponent<Projectile>();
+
+            projectile.transform.position = gameObject.transform.position;
+
+            projectileScript.xForce = horizontalVelocity;
+            projectileScript.yForce = verticalVelocity;
         }
     }
 

@@ -6,10 +6,9 @@ public class Projectile : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D collider;
-    public LayerMask layerMaskThatThisHits = LayerMask.GetMask("Entity");
-    public LayerMask ground = LayerMask.GetMask("Default") | LayerMask.GetMask("TransparentFX") | LayerMask.GetMask("Ignore Raycast") | LayerMask.GetMask("Water") | LayerMask.GetMask("Obstacle");
+    public LayerMask layerMaskThatThisHits;
+    public LayerMask ground;
     private Rigidbody2D rigidBody;
-    private GameObject projectile = new GameObject("Projectile");
     public float xForce = 0.5f;
     public float yForce = 0f;
     public int Damage = 10;
@@ -17,17 +16,11 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = projectile.AddComponent<SpriteRenderer>();
-        spriteRenderer.sprite = (Sprite) Resources.Load("rock.PNG");
-        spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-
-        collider = projectile.AddComponent<CircleCollider2D>();
-        collider.radius = 0.12f;
-        collider.isTrigger = true;
-
-        rigidBody = projectile.AddComponent<Rigidbody2D>();
-
-        projectile.transform.localScale = gameObject.transform.position;
+        layerMaskThatThisHits = LayerMask.GetMask("Entity");
+        ground = LayerMask.GetMask("Default") | LayerMask.GetMask("TransparentFX") | LayerMask.GetMask("Ignore Raycast") | LayerMask.GetMask("Water") | LayerMask.GetMask("Obstacle");
+        rigidBody = gameObject.GetComponent<Rigidbody2D>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        collider = gameObject.GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -46,7 +39,7 @@ public class Projectile : MonoBehaviour
         Collider2D[] obstacleColliders = Physics2D.OverlapCircleAll(transform.position, collider.radius, ground);
         for (int i = 0; i < obstacleColliders.Length; i ++)
         {
-            if (colliders[i])
+            if (obstacleColliders[i])
             {
                 Destroy(gameObject);
             }
