@@ -5,12 +5,17 @@ using UnityEngine;
 public class DoAnAttackScript : MonoBehaviour
 {
     public AttackScript[] attacks = new AttackScript[2];
+    public Sprite[] attackSprites = new Sprite[2];
     public int currentAttack = 0;
+    [SerializeField] private Sprite meleeSprite;
+    [SerializeField] private Sprite rangedSprite;
     // Start is called before the first frame update
     void Start()
     {
         attacks[0] = gameObject.GetComponent<MeleeAttackScript>();
         attacks[1] = gameObject.GetComponent<ShootScript>();
+        attackSprites[0] = meleeSprite;
+        attackSprites[1] = rangedSprite;
     }
 
     // Update is called once per frame

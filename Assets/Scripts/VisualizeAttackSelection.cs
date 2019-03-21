@@ -5,7 +5,7 @@ using UnityEngine;
 public class VisualizeAttackSelection : MonoBehaviour
 {
     [SerializeField] public DoAnAttackScript DoAnAttackScript;
-    public SpriteRenderer sprite;
+    private SpriteRenderer sprite;
     private AttackScript[] attack;
     private int currentAttack;
 
@@ -20,6 +20,7 @@ public class VisualizeAttackSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sprite.sprite = attack[currentAttack].menuSprite;
+        currentAttack = DoAnAttackScript.currentAttack;
+        sprite.sprite = DoAnAttackScript.attackSprites[currentAttack];
     }
 }
