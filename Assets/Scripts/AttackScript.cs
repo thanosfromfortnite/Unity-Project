@@ -5,4 +5,5 @@ using UnityEngine;
 public abstract class AttackScript : MonoBehaviour
 {
     public abstract void Attack();
+    [SerializeField] public Sprite menuSprite;
 }

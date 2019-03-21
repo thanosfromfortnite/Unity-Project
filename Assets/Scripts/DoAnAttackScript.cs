@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DoAnAttackScript : MonoBehaviour
 {
-    private AttackScript[] attacks = new AttackScript[2];
-    private int currentAttack = 0;
+    public AttackScript[] attacks = new AttackScript[2];
+    public int currentAttack = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,4 +37,5 @@ public class DoAnAttackScript : MonoBehaviour
             attacks[currentAttack].Attack();
         }
     }
+    
 }

@@ -18,12 +18,14 @@ public class MeleeAttackScript : AttackScript
         attackHitbox = transform.GetComponent<CapsuleCollider2D>();
         HitSprite.color = new Color(1.0f, 1.0f, 1.0f, 0f);
         nextTime = Time.time;
+        menuSprite = Resources.Load<Sprite>("disgustingbow.PNG");
     }
 
     // Update is called once per frame
     void Update()
     {
     }
+    
 
     public override void Attack()
     {

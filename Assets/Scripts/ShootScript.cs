@@ -14,7 +14,7 @@ public class ShootScript : AttackScript
     void Awake()
     {
         nextTime = Time.time;
-        
+        menuSprite = Resources.Load<Sprite>("dumbsword.PNG");
     }
 
     // Update is called once per frame
@@ -22,6 +22,8 @@ public class ShootScript : AttackScript
     {
         
     }
+    
+
     public override void Attack() {
 
         if (Time.time > nextTime)
