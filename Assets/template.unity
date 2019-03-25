@@ -2423,8 +2423,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08384526, y: -0.009077966}
-  m_Size: {x: 0.6356337, y: 0.6834787}
+  m_Offset: {x: -0.13607205, y: 0.13030878}
+  m_Size: {x: 0.74008435, y: 0.9622191}
   m_Direction: 0
 --- !u!1 &1339704512
 GameObject:
@@ -4901,8 +4901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2d9c2da9cb9334bb5eecdfbc3173f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 250
-  StartWithMaxHealth: 1
+  MaxHealth: 150
+  StartWithMaxHealth: 0
   Health: 100
   CooldownTime: 0
   animator: {fileID: 0}
@@ -5288,8 +5288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2d9c2da9cb9334bb5eecdfbc3173f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 250
-  StartWithMaxHealth: 1
+  MaxHealth: 150
+  StartWithMaxHealth: 0
   Health: 100
   CooldownTime: 0
   animator: {fileID: 0}

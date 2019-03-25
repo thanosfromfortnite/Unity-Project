@@ -95,6 +95,11 @@ public class CharacterController2D : MonoBehaviour
         {
             Accelerate();
         }*/
+
+        if (!wasGrounded && m_Grounded)
+        {
+            gameObject.GetComponent<PlayerMovement>().OnLanding();
+        }
     }
 
     private void Accelerate()
