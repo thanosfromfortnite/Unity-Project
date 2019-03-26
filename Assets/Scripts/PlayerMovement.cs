@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour {
 	bool jump = false;
 	bool crouch = false;
     bool walljump = false;
+    bool attacking = false;
 
 	// Update is called once per frame
 	void Update () {
@@ -35,6 +36,11 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			crouch = false;
 		}
+        if (Input.GetButtonDown("Fire1")) //&& gameObject.GetComponent<DoAnAttackScript>().currentAttack == 0)
+        {
+            attacking = true;
+            animator.SetBool("IsAttacking", true);
+        }
 
 	}
 
@@ -49,6 +55,11 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		animator.SetBool("IsCrouching", isCrouching);
 	}
+
+    public void OnAttackEnd()
+    {
+        animator.SetBool("IsAttacking", false);
+    }
 
 	void FixedUpdate ()
 	{

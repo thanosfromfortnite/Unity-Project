@@ -40,6 +40,7 @@ public class DoAnAttackScript : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             attacks[currentAttack].Attack();
+            gameObject.GetComponent<PlayerMovement>().OnAttackEnd();
         }
     }
     
