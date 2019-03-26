@@ -30,26 +30,27 @@ public class MeleeAttackScript : AttackScript
     {
         if (Time.time > nextTime)
         {
-            Collider2D[] colliders = Physics2D.OverlapCapsuleAll(attackHitbox.transform.position, attackHitbox.size * 2, attackHitbox.direction, HittableLayer);
-            StartCoroutine(Cooldown(AttackSpeed, AttackCooldown));
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                if (colliders[i].gameObject.tag == "Entity")
-                {
-                    colliders[i].gameObject.GetComponent<EnemyHealth>().TakeDamage((gameObject.transform.position.x - colliders[i].gameObject.transform.position.x) > 0, Damage);
-                    break;
-                }
-            }
+            StartCoroutine(AnimationCooldown());
+            
+            nextTime = Time.time + AttackCooldown;
         }
     }
-    IEnumerator Cooldown(float time, float time2 = 0)
+
+    IEnumerator AnimationCooldown()
     {
-        //Debug.Log("on");
-        HitSprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        yield return new WaitForSecondsRealtime(time);
-        //Debug.Log("off");
-        yield return new WaitForSecondsRealtime(time2);
-        HitSprite.color = new Color(1.0f, 1.0f, 1.0f, 0f);
-        //Debug.Log("cooldown");
+        gameObject.GetComponent<PlayerMovement>().animator.SetBool("IsAttacking", true);
+        Collider2D[] colliders = Physics2D.OverlapCapsuleAll(attackHitbox.transform.position, attackHitbox.size * 2, attackHitbox.direction, HittableLayer);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject.tag == "Entity")
+            {
+                colliders[i].gameObject.GetComponent<EnemyHealth>().TakeDamage((gameObject.transform.position.x - colliders[i].gameObject.transform.position.x) > 0, Damage);
+                break;
+            }
+        }
+        yield return new WaitForSecondsRealtime(0.2f);
+        
+        gameObject.GetComponent<PlayerMovement>().animator.SetBool("IsAttacking", false);
+        
     }
 }

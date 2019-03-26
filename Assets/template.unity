@@ -1756,8 +1756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128067981f47ed14ba929f11f0fab129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackCooldown: 0
-  AttackSpeed: 0.1
+  AttackCooldown: 1
+  AttackSpeed: 0.4
   Damage: 25
   HittableLayer:
     serializedVersion: 2
