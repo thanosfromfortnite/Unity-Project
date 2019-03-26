@@ -36,11 +36,6 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			crouch = false;
 		}
-        if (Input.GetButtonDown("Fire1")) //&& gameObject.GetComponent<DoAnAttackScript>().currentAttack == 0)
-        {
-            attacking = true;
-            animator.SetBool("IsAttacking", true);
-        }
 
 	}
 
@@ -56,10 +51,7 @@ public class PlayerMovement : MonoBehaviour {
 		animator.SetBool("IsCrouching", isCrouching);
 	}
 
-    public void OnAttackEnd()
-    {
-        animator.SetBool("IsAttacking", false);
-    }
+    
 
 	void FixedUpdate ()
 	{
