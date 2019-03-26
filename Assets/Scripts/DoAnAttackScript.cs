@@ -39,8 +39,11 @@ public class DoAnAttackScript : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1"))
         {
+            gameObject.GetComponent<PlayerMovement>().animator.SetBool("IsAttacking", true);
             attacks[currentAttack].Attack();
-            gameObject.GetComponent<PlayerMovement>().OnAttackEnd();
+            Debug.Log(gameObject.GetComponent<PlayerMovement>().animator.GetBool("IsAttacking"));
+            gameObject.GetComponent<PlayerMovement>().animator.SetBool("IsAttacking", false);
+            Debug.Log(gameObject.GetComponent<PlayerMovement>().animator.GetBool("IsAttacking"));
         }
     }
     
