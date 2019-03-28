@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 172000492}
   - component: {fileID: 172000495}
   - component: {fileID: 172000496}
-  - component: {fileID: 172000497}
   - component: {fileID: 172000498}
   m_Layer: 5
   m_Name: PlayButton
@@ -265,21 +264,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.645043, y: 0.00000007689511}
   m_Size: {x: 6.709953, y: 2.0000093}
   m_Direction: 1
---- !u!114 &172000497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172000490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 172000490}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!114 &172000498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,17 +281,51 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11500000, guid: b60bd2e14ec3cc54099443e47b553799, type: 3}
-          m_MethodName: 
+        - m_Target: {fileID: 172000495}
+          m_MethodName: MouseOver
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 172000495}
+          m_MethodName: MouseNotOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 172000495}
+          m_MethodName: MouseNotOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -1983,6 +2001,7 @@ GameObject:
   - component: {fileID: 549085491}
   - component: {fileID: 549085490}
   - component: {fileID: 549085493}
+  - component: {fileID: 549085494}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2070,8 +2089,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EventMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_MaxRayIntersections: 0
+    m_Bits: 3891
+  m_MaxRayIntersections: 29
+--- !u!114 &549085494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549085489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 172000490}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &844988436
 GameObject:
   m_ObjectHideFlags: 0

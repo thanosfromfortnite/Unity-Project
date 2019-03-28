@@ -16,30 +16,35 @@ public class MenuHoverOverButtons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GodIHateThisCode())
+        if (Input.GetMouseButtonDown(0))
         {
-            MouseOver();
-        }
-        else
-        {
-            MouseNotOver();
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            
+            if (hit.collider != null)
+            {
+                Debug.Log(hit.collider.gameObject.name);
+                hit.collider.attachedRigidbody.AddForce(Vector2.up);
+            }
         }
     }
 
-    private bool GodIHateThisCode()
-    {
-        return EventSystem.current.IsPointerOverGameObject();
-    }
 
-    void MouseOver()
+    public void MouseOver()
     {
         animator.SetBool("hovered", true);
         Debug.Log("over");
     }
 
-    void MouseNotOver()
+    public void MouseNotOver()
     {
         animator.SetBool("hovered", false);
         Debug.Log("gone");
+    }
+
+    void OnMouseEnter()
+    {
+        Debug.Log("Test");
     }
 }
