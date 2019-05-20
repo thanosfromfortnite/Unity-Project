@@ -69,8 +69,8 @@
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\FrogJump.cs" />
+    <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\MeleeAttackScript.cs" />
-    <Compile Include="Assets\Scripts\MenuHoverOverButtons.cs" />
     <Compile Include="Assets\Scripts\PlayerDetection.cs" />
     <Compile Include="Assets\Scripts\PlayerDetectionForThingsThatArentFrogs.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
