@@ -20,12 +20,16 @@ public class ButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w")) {
+        if (Input.GetKey("s")) {
             Scroll(true);
         }
-        if (Input.GetKey("s"))
+        if (Input.GetKey("w"))
         {
             Scroll(false);
+        }
+        if (Input.GetKey("space"))
+        {
+            buttons[selectedButton].SelectButton();
         }
     }
 
@@ -37,7 +41,7 @@ public class ButtonController : MonoBehaviour
             selectedButton++;
             if (selectedButton >= buttons.Length)
             {
-                selectedButton = 0;
+                selectedButton = buttons.Length - 1;
             }
         }
         else
@@ -45,7 +49,7 @@ public class ButtonController : MonoBehaviour
             selectedButton--;
             if (selectedButton <= 0)
             {
-                selectedButton = buttons.Length - 1;
+                selectedButton = 0;
             }
         }
         buttons[previousButton].LeaveButton();
