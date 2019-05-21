@@ -123,10 +123,8 @@ GameObject:
   - component: {fileID: 172000491}
   - component: {fileID: 172000494}
   - component: {fileID: 172000493}
-  - component: {fileID: 172000492}
-  - component: {fileID: 172000495}
   - component: {fileID: 172000496}
-  - component: {fileID: 172000498}
+  - component: {fileID: 172000492}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -148,27 +146,18 @@ Transform:
   m_Father: {fileID: 549085492}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &172000492
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &172000492
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172000490}
-  m_BodyType: 0
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17e9def5a7cf6f46b1775fee0d9bba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &172000493
 Animator:
   serializedVersion: 3
@@ -236,19 +225,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &172000495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172000490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b60bd2e14ec3cc54099443e47b553799, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!70 &172000496
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -265,71 +241,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.645043, y: 0.00000007689511}
   m_Size: {x: 6.709953, y: 2.0000093}
   m_Direction: 1
---- !u!114 &172000498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172000490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 172000495}
-          m_MethodName: MouseOver
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 172000495}
-          m_MethodName: MouseNotOver
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 172000495}
-          m_MethodName: MouseNotOver
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &205286780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,7 +1913,6 @@ GameObject:
   - component: {fileID: 549085491}
   - component: {fileID: 549085490}
   - component: {fileID: 549085493}
-  - component: {fileID: 549085494}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2086,28 +1996,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 549085489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1690312454, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: ae3dbf1114750c749902016730760d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EventMask:
-    serializedVersion: 2
-    m_Bits: 3891
-  m_MaxRayIntersections: 29
---- !u!114 &549085494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549085489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 172000490}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!1 &844988436
 GameObject:
   m_ObjectHideFlags: 0
@@ -9120,6 +9011,7 @@ GameObject:
   - component: {fileID: 1811780330}
   - component: {fileID: 1811780329}
   - component: {fileID: 1811780328}
+  - component: {fileID: 1811780331}
   m_Layer: 5
   m_Name: InfoButton
   m_TagString: Untagged
@@ -9172,7 +9064,7 @@ Animator:
   m_GameObject: {fileID: 1811780326}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f6b4912eb3f2f847a3b24d2b914b4bf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3358180ffc6843a47b7fd3965d742593, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9229,3 +9121,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1811780331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811780326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dff148e0c7c76740b9a34d36b58903c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
