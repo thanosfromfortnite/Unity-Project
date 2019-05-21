@@ -19,7 +19,7 @@ public class InfoButtonScript : MonoBehaviour, MainMenuButtons
 
     public void SelectButton()
     {
-        Debug.Log("eeeeee");
+        SceneManager.LoadScene("info");
     }
 
     public void HoverButton()

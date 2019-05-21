@@ -15,6 +15,7 @@ public class ButtonController : MonoBehaviour
         buttons = new MainMenuButtons[2];
         buttons[0] = GameObject.Find("PlayButton").GetComponent<PlayButtonScript>();
         buttons[1] = GameObject.Find("InfoButton").GetComponent<InfoButtonScript>();
+        buttons[0].HoverButton();
     }
 
     // Update is called once per frame

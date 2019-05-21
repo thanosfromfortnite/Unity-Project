@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -42,6 +43,10 @@ public class PlayerHealth : MonoBehaviour
             {
                 Knockback(-knockbackForceX, knockbackforceY);
             }
+        }
+        if (Health <= 0)
+        {
+            SceneManager.LoadScene("oof");
         }
     }
 

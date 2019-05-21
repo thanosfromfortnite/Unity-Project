@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\SceneChanger.cs" />
      <Compile Include="Assets\Scripts\ShootScript.cs" />
      <Compile Include="Assets\Scripts\VisualizeAttackSelection.cs" />
      <Compile Include="Assets\Scripts\VisualizeEnemyHealth.cs" />
