@@ -22,7 +22,7 @@ public class Explosion : MonoBehaviour
                 colliders[i].gameObject.GetComponent<PlayerHealth>().TakeDamage((gameObject.transform.position.x - colliders[i].gameObject.transform.position.x) > 0);
             }
         }
-        nextTime = Time.time + 0.85f;
+        nextTime = Time.time + 15f;
     }
 
     // Update is called once per frame

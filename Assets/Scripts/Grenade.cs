@@ -85,7 +85,7 @@ public class Grenade : MonoBehaviour
         spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
         CircleCollider2D collider = explosion.AddComponent<CircleCollider2D>();
-        collider.radius = 3;
+        collider.radius = 2f;
         collider.isTrigger = true;
 
         Rigidbody2D rigidBody = explosion.AddComponent<Rigidbody2D>();
