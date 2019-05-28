@@ -7,7 +7,6 @@ public class ShootScript : AttackScript
     private float nextTime;
     [SerializeField] public float AttackCooldown;
     [SerializeField] public float AttackSpeed;
-    [SerializeField] public int Damage = 25;
     [SerializeField] public Sprite sprite;
     private GameObject projectile;
     // Start is called before the first frame update
@@ -57,10 +56,5 @@ public class ShootScript : AttackScript
             }
         }
     }
-
-    /*IEnumerator Cooldown(float cooldown, float speed = 0)
-    {
-        yield return new WaitForSecondsRealtime(speed);
-        yield return new WaitForSecondsRealtime(cooldown);
-    }*/
+    
 }
