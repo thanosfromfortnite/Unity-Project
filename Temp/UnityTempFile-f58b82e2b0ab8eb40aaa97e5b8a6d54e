@@ -197,7 +197,9 @@ Assets/Scripts/CollisionDamage.cs
 Assets/Scripts/DoAnAttackScript.cs
 Assets/Scripts/EnemyHealth.cs
 Assets/Scripts/EnemyMove.cs
+Assets/Scripts/Explosion.cs
 Assets/Scripts/FrogJump.cs
+Assets/Scripts/Grenade.cs
 Assets/Scripts/GrenadeLauncherScript.cs
 Assets/Scripts/InfoButtonScript.cs
 Assets/Scripts/MainMenuButtons.cs

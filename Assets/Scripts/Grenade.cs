@@ -10,10 +10,10 @@ public class Grenade : MonoBehaviour
     public LayerMask ground;
     public Sprite sprite;
     private Rigidbody2D rigidBody;
-    public float xForce = 25f;
-    public float yForce = 25f;
+    public float xForce = 4.5f;
+    public float yForce = 95f;
     private bool left;
-    public int Damage = 25;
+    public int Damage = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -29,29 +29,13 @@ public class Grenade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidBody.AddForce(new Vector2(xForce, yForce));
-        if (left)
-        {
-            xForce++;
-            if (xForce >= 0)
-            {
-                xForce = 0;
-            }
-        }
-        else
-        {
-            xForce--;
-            if (xForce <= 0)
-            {
-                xForce = 0;
-            }
-        }
+        rigidBody.velocity = new Vector2(xForce, rigidBody.velocity.y);
 
-        yForce--;
-        if (yForce <= 0)
-        {
-            yForce = 0;
-        }
+
+        rigidBody.AddForce(new Vector2(0, yForce));
+
+        yForce -= yForce / 2f;
+        
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, collider.radius, layerMaskThatThisHits);
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -94,6 +78,7 @@ public class Grenade : MonoBehaviour
         explodeScript.collider = collider;
 
         explosion.transform.position = gameObject.transform.position;
+        explosion.transform.SetParent(gameObject.transform.parent);
         Destroy(gameObject);
     }
 }

@@ -8,6 +8,7 @@ public class ShootScript : AttackScript
     [SerializeField] public float AttackCooldown;
     [SerializeField] public float AttackSpeed;
     [SerializeField] public Sprite sprite;
+    [SerializeField] public int Damage;
     private GameObject projectile;
     // Start is called before the first frame update
     void Awake()
@@ -48,6 +49,7 @@ public class ShootScript : AttackScript
             Rigidbody2D rigidBody = projectile.AddComponent<Rigidbody2D>();
 
             Projectile projectileScript = projectile.AddComponent<Projectile>();
+            projectileScript.Damage = Damage;
 
             projectile.transform.position = gameObject.transform.position;
             if (!gameObject.GetComponent<CharacterController2D>().m_FacingRight)
