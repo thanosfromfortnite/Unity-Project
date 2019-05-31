@@ -2608,7 +2608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackCooldown: 0.4
   AttackSpeed: 0.4
-  Damage: 50
+  Damage: 69
   HittableLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -2653,7 +2653,7 @@ MonoBehaviour:
   AttackCooldown: 0
   AttackSpeed: 0.1
   sprite: {fileID: 21300000, guid: e79125697162b7d479dac63a7190573c, type: 3}
-  Damage: 25
+  Damage: 13
 --- !u!114 &820667364
 MonoBehaviour:
   m_ObjectHideFlags: 0
