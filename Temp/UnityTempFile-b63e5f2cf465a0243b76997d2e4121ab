@@ -2,7 +2,7 @@
 -target:library
 -nowarn:0169
 -langversion:4
--out:Temp/Assembly-CSharp.dll
+-out:Temp/Unity.TextMeshPro.dll
 -nostdlib
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
@@ -66,19 +66,29 @@
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/Unity.Locator.dll"
--r:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
--r:Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
--r:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
--r:Library/ScriptAssemblies/Unity.TextMeshPro.dll
--r:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll"
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll"
--r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll
--r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll
--r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll
+-r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
+-r:"C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
+-r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll
+-r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll
+-r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll
+-r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll
+-r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll
+-r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll
+-r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll
+-r:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll"
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll"
@@ -188,31 +198,48 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
--define:ENABLE_VSTU
-Assets/Scripts/AttackScript.cs
-Assets/Scripts/ButtonController.cs
-Assets/Scripts/CameraFollow.cs
-Assets/Scripts/CharacterController2D.cs
-Assets/Scripts/CollisionDamage.cs
-Assets/Scripts/DoAnAttackScript.cs
-Assets/Scripts/EnemyHealth.cs
-Assets/Scripts/EnemyMove.cs
-Assets/Scripts/Explosion.cs
-Assets/Scripts/FrogJump.cs
-Assets/Scripts/Grenade.cs
-Assets/Scripts/GrenadeLauncherScript.cs
-Assets/Scripts/InfoButtonScript.cs
-Assets/Scripts/MainMenuButtons.cs
-Assets/Scripts/MeleeAttackScript.cs
-Assets/Scripts/PlayButtonScript.cs
-Assets/Scripts/PlayerDetection.cs
-Assets/Scripts/PlayerDetectionForThingsThatArentFrogs.cs
-Assets/Scripts/PlayerHealth.cs
-Assets/Scripts/PlayerMovement.cs
-Assets/Scripts/Projectile.cs
-Assets/Scripts/SceneChanger.cs
-Assets/Scripts/ShootScript.cs
-Assets/Scripts/SpawnEnemyScript.cs
-Assets/Scripts/VisualizeAttackSelection.cs
-Assets/Scripts/VisualizeEnemyHealth.cs
-Assets/Scripts/VisualizeHealth.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/FastAction.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/MaterialReferenceManager.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/PackageResourceImporterWindow.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TextContainer.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TextMeshPro.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TextMeshProUGUI.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_Asset.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_ColorGradient.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_Compatibility.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_CoroutineTween.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_DefaultControls.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_Dropdown.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_FontAsset.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_InputField.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_InputValidator.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_LineInfo.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_ListPool.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_MaterialManager.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_MeshInfo.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_ObjectPool.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_ScrollbarEventHandler.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_SelectionCaret.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_Settings.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_Sprite.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_SpriteAnimator.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_SpriteAsset.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_SpriteAssetImportFormats.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_Style.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_StyleSheet.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_SubMesh.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_SubMeshUI.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_Text.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_TextElement.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_TextInfo.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_TextUtilities.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_UpdateManager.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_UpdateRegistery.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMP_XmlTagStack.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_EventManager.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_ExtensionMethods.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_FontUtilities.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_MeshUtilities.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_Private.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_ShaderUtilities.cs
+C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.textmeshpro@1.3.0/Scripts/Runtime/TMPro_UGUI_Private.cs
