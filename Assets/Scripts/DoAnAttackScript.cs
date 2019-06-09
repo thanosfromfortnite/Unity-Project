@@ -45,4 +45,9 @@ public class DoAnAttackScript : MonoBehaviour
             attacks[currentAttack].Attack();
         }
     }
+
+    public void Add(GameObject weapon)
+    {
+
+    }
 }
