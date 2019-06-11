@@ -2,7 +2,7 @@
 -target:library
 -nowarn:0169
 -langversion:4
--out:Temp/Unity.Analytics.DataPrivacy.dll
+-out:Temp/Unity.PackageManagerUI.Editor.dll
 -nostdlib
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
@@ -34,6 +34,7 @@
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.ProfilerModule.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
+-r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Managed/UnityEngine/UnityEngine.StreamingModule.dll"
@@ -81,23 +82,25 @@
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
--r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll
--r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll
--r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll
--r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll
--r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll
 -r:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Core.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Runtime.Serialization.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.Linq.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\UnityScript.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\UnityScript.Lang.dll"
--r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\Boo.Lang.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\mscorlib.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\System.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\System.Core.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\System.Runtime.Serialization.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\System.Xml.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\System.Xml.Linq.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\UnityScript.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\UnityScript.Lang.dll"
+-r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\2.0-api\Boo.Lang.dll"
 -define:UNITY_5_3_OR_NEWER
 -define:UNITY_5_4_OR_NEWER
 -define:UNITY_5_5_OR_NEWER
@@ -184,7 +187,7 @@
 -define:ENABLE_AR
 -define:ENABLE_WEBSOCKET_HOST
 -define:ENABLE_MONO
--define:NET_2_0_SUBSET
+-define:NET_2_0
 -define:NET_LEGACY
 -define:ENABLE_PROFILER
 -define:DEBUG
@@ -196,7 +199,55 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
--define:ENABLE_VSTU
-C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/DataPrivacy/AssemblyInfo.cs
-C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/DataPrivacy/DataPrivacy.cs
-C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/DataPrivacy/DataPrivacyButton.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/AssemblyInfo.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/External/SemVersion.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/External/SemVersionExtension.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Common/ApplicationUtil.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Common/OperationSignal.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Common/Resources.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Common/ThreadedDelay.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Interfaces/IAddOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Interfaces/IBaseOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Interfaces/IListOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Interfaces/IOperationFactory.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Interfaces/IRemoveOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Interfaces/ISearchOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/OperationFactory.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/Package.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageAssetPostprocessor.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageCollection.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageError.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageFilter.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageGroupOrigins.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageInfo.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageInfoListExtensions.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageJsonHelper.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageListExtensions.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageOrigin.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageSearchFilter.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageState.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Packages/PackageTag.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Upm/UpmAddOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Upm/UpmBaseOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Upm/UpmListOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Upm/UpmOperationFactory.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Upm/UpmRemoveOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Upm/UpmSearchOperation.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Common/Alert.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Common/LoadingSpinner.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Common/PopupField.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Common/UIUtils.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Common/VersionItem.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Interfaces/IPackageManagerExtension.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageAddFromUrlField.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageDetails.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageFiltering.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageGroup.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageItem.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageList.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageManagerExtensions.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageManagerPrefs.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageManagerToolbar.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageManagerWindow.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageSearchToolbar.cs
+C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageStatusBar.cs

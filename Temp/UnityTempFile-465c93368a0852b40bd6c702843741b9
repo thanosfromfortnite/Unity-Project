@@ -76,9 +76,11 @@
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll"
 -r:"C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll"
--r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll
--r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll
--r:C:/Users/BT_1N3_14/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll
+-r:C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll"
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll"
@@ -188,7 +190,6 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
--define:ENABLE_VSTU
 Assets/Scripts/AttackScript.cs
 Assets/Scripts/ButtonController.cs
 Assets/Scripts/CameraFollow.cs
