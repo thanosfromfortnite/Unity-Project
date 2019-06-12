@@ -48,6 +48,10 @@ public class PlayerHealth : MonoBehaviour
                 Knockback(-knockbackForceX, knockbackforceY);
             }
         }
+        if (Health > 5)
+        {
+            Health = 5;
+        }
         if (Health <= 0)
         {
             SceneManager.LoadScene("oof");
