@@ -8,7 +8,6 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private bool StartWithMaxHealth;
     [SerializeField] public int Health;
     [SerializeField] private float CooldownTime;
-    public Animator animator;
     private float nextTime;
     // Start is called before the first frame update
     void Start()

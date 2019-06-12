@@ -33,7 +33,7 @@ public class Projectile : MonoBehaviour
         {
             if (colliders[i].gameObject.tag == "Entity")
             {
-                colliders[i].gameObject.GetComponent<EnemyHealth>().TakeDamage((gameObject.transform.position.x - colliders[i].gameObject.transform.position.x) > 0, Damage);
+                colliders[i].gameObject.GetComponent<EnemyHealth>().TakeDamage((gameObject.transform.position.x - colliders[i].gameObject.transform.position.x) > 0, Damage, 50f, 0f);
                 Destroy(gameObject);
             }
         }

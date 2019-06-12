@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private bool StartWithMaxHealth;
     [SerializeField] public int Health;
     [SerializeField] private float CooldownTime;
+    [SerializeField] public int InstantDeathHeight;
     private float nextTime;
     public Animator animator;
 
@@ -25,16 +26,19 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (gameObject.transform.position.y < InstantDeathHeight)
+        {
+            TakeDamage(false, 5);
+        }
     }
 
-    public void TakeDamage(bool direction, float knockbackForceX = 600f, float knockbackforceY = 400f)
+    public void TakeDamage(bool direction, int dmg = 1, float knockbackForceX = 600f, float knockbackforceY = 400f)
     {
         if (Time.time > nextTime)
         {
             //Debug.Log("no");
             nextTime = Time.time + CooldownTime;
-            Ouch(1);
+            Ouch(dmg);
             if (direction)
             {
                 Knockback(knockbackForceX, knockbackforceY);

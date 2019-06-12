@@ -10,6 +10,7 @@ public class PlayerDetectionForThingsThatArentFrogs : MonoBehaviour
     [SerializeField] private LayerMask m_WhatIsGround;
     [SerializeField] private Transform WallCheckLeft;
     [SerializeField] private Transform WallCheckRight;
+    [SerializeField] private Animator animator;
     
     const float k_GroundedRadius = .5f;
     private Transform ownPosition;
@@ -17,6 +18,7 @@ public class PlayerDetectionForThingsThatArentFrogs : MonoBehaviour
     public EnemyMove enemyMovement;
     private float relativePosition;
     [SerializeField] private bool DontMoveIfNotGrounded = false;
+    private bool wasMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,11 @@ public class PlayerDetectionForThingsThatArentFrogs : MonoBehaviour
         if ((m_Grounded && DontMoveIfNotGrounded || !DontMoveIfNotGrounded) && Mathf.Abs(Mathf.Abs(playerPosition.position.x + playerPosition.position.y) - Mathf.Abs(ownPosition.position.x + ownPosition.position.y)) <= DetectionRadius)
         {
             Collider2D[] otherColliders = Physics2D.OverlapCircleAll(WallCheckLeft.position, k_GroundedRadius, m_WhatIsGround);
+            if (!wasMoving)
+            {
+                animator.SetBool("moving", true);
+                wasMoving = true;
+            }
             for (int i = 0; i < otherColliders.Length; i ++)
             {
                 if (otherColliders[i].gameObject != gameObject)
@@ -71,6 +78,11 @@ public class PlayerDetectionForThingsThatArentFrogs : MonoBehaviour
             {
                 enemyMovement.MoveYouIdiot(playerPosition.position.x - ownPosition.position.x >= 0);
             }
+        }
+        else if (wasMoving)
+        {
+            animator.SetBool("moving", false);
+            wasMoving = false;
         }
     }
 }
