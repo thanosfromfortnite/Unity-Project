@@ -39,6 +39,7 @@ public class ShootScript : AttackScript
             projectile.AddComponent<SpriteRenderer>();
             SpriteRenderer spriteRenderer = projectile.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;
+            spriteRenderer.flipX = !GetComponent<CharacterController2D>().m_FacingRight;
             spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
             CircleCollider2D collider = projectile.AddComponent<CircleCollider2D>();
