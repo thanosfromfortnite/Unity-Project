@@ -31,6 +31,14 @@ public class PlayerDetectionForThingsThatArentFrogs : MonoBehaviour
     void Update()
     {
         Detect();
+        if (GetComponent<Rigidbody2D>().velocity.x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     private void Detect()

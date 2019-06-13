@@ -27,7 +27,14 @@ public class PlayerDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (GetComponent<Rigidbody2D>().velocity.x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     private void Detect()
