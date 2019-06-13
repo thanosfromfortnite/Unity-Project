@@ -253,8 +253,9 @@ Transform:
   - {fileID: 547395616}
   - {fileID: 2018957271}
   - {fileID: 482317200}
+  - {fileID: 1873847115}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &86677670
 GameObject:
@@ -435,8 +436,8 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  knockbackX: 500
-  knockbackY: 500
+  knockbackX: 400
+  knockbackY: 600
   Damage: 1
   SelfDestruct: 0
 --- !u!114 &131772603
@@ -840,7 +841,7 @@ Transform:
   m_LocalScale: {x: 5.4110003, y: 5.4110003, z: 0.773}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &175710475
 GameObject:
@@ -1023,7 +1024,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 0.773}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235210535
 GameObject:
@@ -1307,7 +1308,7 @@ Transform:
   m_LocalScale: {x: 5.4110003, y: 5.4110003, z: 0.773}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &356783571
 GameObject:
@@ -1677,8 +1678,8 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  knockbackX: 500
-  knockbackY: 800
+  knockbackX: 1500
+  knockbackY: 400
   Damage: 1
   SelfDestruct: 0
 --- !u!114 &482317193
@@ -2727,8 +2728,8 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  knockbackX: 500
-  knockbackY: 500
+  knockbackX: 400
+  knockbackY: 600
   Damage: 1
   SelfDestruct: 0
 --- !u!114 &547395609
@@ -3603,8 +3604,8 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  knockbackX: 500
-  knockbackY: 500
+  knockbackX: 400
+  knockbackY: 600
   Damage: 1
   SelfDestruct: 0
 --- !u!114 &678697721
@@ -3929,7 +3930,7 @@ Transform:
   m_LocalScale: {x: 5.4110003, y: 5.4110003, z: 0.773}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &703315110
 GameObject:
@@ -4750,7 +4751,7 @@ Transform:
   m_LocalScale: {x: 5.4110003, y: 5.4110003, z: 0.773}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &847405478
 GameObject:
@@ -5783,7 +5784,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 0.773}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1182782141
 MonoBehaviour:
@@ -5995,7 +5996,7 @@ Transform:
   - {fileID: 662785758}
   - {fileID: 2084477741}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1338992553
 GameObject:
@@ -68538,7 +68539,7 @@ Transform:
   m_LocalScale: {x: 5.4110003, y: 5.4110003, z: 0.773}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1407710593
 GameObject:
@@ -69046,7 +69047,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 0.773}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1628621308
 GameObject:
@@ -103337,14 +103338,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873847112}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.94, y: 0.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -137.2054, y: -2.7019053, z: -1.2460938}
   m_LocalScale: {x: 5.4110003, y: 5.4110003, z: 0.773}
   m_Children:
   - {fileID: 715151420}
   - {fileID: 1683393693}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 84803456}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1873847116
 CircleCollider2D:
@@ -103473,8 +103474,8 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  knockbackX: 600
-  knockbackY: 700
+  knockbackX: 400
+  knockbackY: 600
   Damage: 1
   SelfDestruct: 0
 --- !u!114 &1873847123
@@ -103843,8 +103844,8 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 1024
-  knockbackX: 500
-  knockbackY: 500
+  knockbackX: 400
+  knockbackY: 600
   Damage: 1
   SelfDestruct: 0
 --- !u!114 &2018957264
@@ -103873,8 +103874,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4613f63d3f059429f31b405fe75e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectionRadius: 7
-  CooldownTimer: 3
+  DetectionRadius: 8
+  CooldownTimer: 1
   m_GroundCheck: {fileID: 599697589}
   m_WhatIsGround:
     serializedVersion: 2
