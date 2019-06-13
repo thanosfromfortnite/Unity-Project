@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(bool direction, int dmg = 1, float knockbackForceX = 600f, float knockbackforceY = 400f)
     {
-        if (Time.time > nextTime)
+        if (Time.time > nextTime || dmg < 0)
         {
             //Debug.Log("no");
             nextTime = Time.time + CooldownTime;
