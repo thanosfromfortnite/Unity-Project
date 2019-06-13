@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(bool direction, int damage, float knockbackForceX = 300f, float knockbackforceY = 300f)
+    public void TakeDamage(bool direction, int damage, float knockbackForceX = 300f, float knockbackforceY = 150f)
     {
         if (Time.time > nextTime)
         {
@@ -51,7 +51,6 @@ public class EnemyHealth : MonoBehaviour
         Health -= dmg;
         //Debug.Log("yeah");
         StartCoroutine(Waiter());
-        Debug.Log(Health);
 
     }
 

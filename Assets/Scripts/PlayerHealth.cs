@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log("no");
             nextTime = Time.time + CooldownTime;
             Ouch(dmg);
-            if (direction)
+            if (!direction)
             {
                 Knockback(knockbackForceX, knockbackforceY);
             }
@@ -63,7 +63,6 @@ public class PlayerHealth : MonoBehaviour
         Health -= dmg;
         //Debug.Log("yeah");
         StartCoroutine(Waiter());
-        Debug.Log(Health);
         
     }
     
