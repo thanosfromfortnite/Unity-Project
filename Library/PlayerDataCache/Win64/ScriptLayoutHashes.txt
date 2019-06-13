@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/BT_1N3_22/Documents/GitHub/Unity-Project/Run0/2D Game Example.exe
+C:/Users/BT_1N3_18/Documents/GitHub/Unity-Project/Run0/2D Game Example.exe
 SceneListBegin?
 Assets/Scenes/title.unity
 Assets/Scenes/lv0.unity
